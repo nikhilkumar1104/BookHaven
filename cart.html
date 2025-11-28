@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - BookHaven</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #000000, #1a1a2e);
+            color: white;
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        header {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #333;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ffcc00;
+        }
+        .cart {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .cart-item {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid #444;
+        }
+        button {
+            background: #ffcc00;
+            color: black;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #e6b800;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.9);
+            border-top: 2px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>BookHaven - Cart</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="product.html">Products</a>
+            <a href="cart.html">Cart</a>
+            <a href="paymet.html">Payment</a>
+        </nav>
+    </header>
+    <section class="cart">
+        <h2>Your Cart</h2>
+        <div id="cart-items"></div>
+        <p id="total">Total: $0.00</p>
+        <a href="paymet.html"><button>Proceed to Payment</button></a>
+    </section>
+    <footer>
+        <p>&copy; 2023 BookHaven. All rights reserved.</p>
+    </footer>
+    <script>
+        function loadCart() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let itemsDiv = document.getElementById('cart-items');
+            let total = 0;
+            itemsDiv.innerHTML = '';
+            cart.forEach(item => {
+                itemsDiv.innerHTML += `<div class="cart-item">${item.name} - $${item.price}</div>`;
+                total += item.price;
+            });
+            document.getElementById('total').textContent = `Total: $${total.toFixed(2)}`;
+        }
+        loadCart();
+    </script>
+</body>
+</html>
