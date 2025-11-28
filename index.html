@@ -9,7 +9,7 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            background: linear-gradient(135deg, #000000, #1a1a2e);
             color: white;
             animation: fadeIn 1s ease-in;
         }
@@ -18,9 +18,10 @@
             to { opacity: 1; }
         }
         header {
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.9);
             padding: 20px;
             text-align: center;
+            border-bottom: 2px solid #333;
         }
         nav a {
             color: white;
@@ -38,6 +39,7 @@
         .hero h1 {
             font-size: 3em;
             margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
         }
         .featured {
             display: flex;
@@ -46,17 +48,18 @@
             padding: 20px;
         }
         .book-card {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.8);
             margin: 10px;
             padding: 20px;
             border-radius: 10px;
             width: 250px;
             text-align: center;
+            border: 1px solid #444;
             transition: transform 0.3s, box-shadow 0.3s;
         }
         .book-card:hover {
             transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 20px rgba(255, 204, 0, 0.3);
         }
         .book-card img {
             width: 100%;
@@ -67,7 +70,8 @@
         footer {
             text-align: center;
             padding: 20px;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.9);
+            border-top: 2px solid #333;
         }
     </style>
 </head>
@@ -83,7 +87,7 @@
     </header>
     <section class="hero">
         <h1>Welcome to BookHaven</h1>
-        <p>Discover your next great read. Explore our collection of timeless classics and modern bestsellers.</p>
+        <p>Discover your next great read in the shadows. Explore our collection of timeless classics and modern bestsellers.</p>
         <a href="product.html" style="background: #ffcc00; color: black; padding: 10px 20px; border-radius: 5px; text-decoration: none;">Shop Now</a>
     </section>
     <section class="featured">
