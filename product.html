@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - BookHaven</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #000000, #1a1a2e);
+            color: white;
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        header {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #333;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ffcc00;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .product-card {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #444;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .product-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 204, 0, 0.3);
+        }
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            animation: bookFlip 2s infinite alternate;
+        }
+        @keyframes bookFlip {
+            0% { transform: rotateY(0deg); }
+            100% { transform: rotateY(10deg); }
+        }
+        button {
+            background: #ffcc00;
+            color: black;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #e6b800;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.9);
+            border-top: 2px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>BookHaven - Products</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="product.html">Products</a>
+            <a href="cart.html">Cart</a>
+            <a href="paymet.html">Payment</a>
+        </nav>
+    </header>
+    <section class="products">
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=250&h=200&fit=crop" alt="The Great Gatsby">
+            <h3>The Great Gatsby</h3>
+            <p>A classic tale of the American Dream. $15.99</p>
+            <button onclick="addToCart('The Great Gatsby', 15.99)">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=250&h=200&fit=crop" alt="1984">
+            <h3>1984</h3>
+            <p>Dystopian novel by George Orwell. $12.99</p>
+            <button onclick="addToCart('1984', 12.99)">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=250&h=200&fit=crop" alt="To Kill a Mockingbird">
+            <h3>To Kill a Mockingbird</h3>
+            <p>Harper Lee's Pulitzer Prize winner. $14.99</p>
+            <button onclick="addToCart('To Kill a Mockingbird', 14.99)">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=250&h=200&fit=crop" alt="Pride and Prejudice">
+            <h3>Pride and Prejudice</h3>
+            <p>Jane Austen's romantic classic. $13.99</p>
+            <button onclick="addToCart('Pride and Prejudice', 13.99)">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=250&h=200&fit=crop" alt="The Catcher in the Rye">
+            <h3>The Catcher in the Rye</h3>
+            <p>J.D. Salinger's coming-of-age story. $11.99</p>
+            <button onclick="addToCart('The Catcher in the Rye', 11.99)">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=250&h=200&fit=crop" alt="Harry Potter and the Sorcerer's Stone">
+            <h3>Harry Potter and the Sorcerer's Stone</h3>
+            <p>J.K. Rowling's magical adventure. $16.99</p>
+            <button onclick="addToCart('Harry Potter and the Sorcerer\'s Stone', 16.99)">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=250&h=200&fit=crop" alt="The Hobbit">
+            <h3>The Hobbit</h3>
+            <p>J.R.R. Tolkien's fantasy epic. $17.99</p>
+            <button onclick="addToCart('The Hobbit', 17.99)">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=250&h=200&fit=crop" alt="Dune">
+            <h3>Dune</h3>
+            <p>Frank Herbert's sci-fi masterpiece. $18.99</p>
+            <button onclick="addToCart('Dune', 18.99)">Add to Cart</button>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2023 BookHaven. All rights reserved.</p>
+    </footer>
+    <script>
+        function addToCart(name, price) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({ name, price });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(name + ' added to cart!');
+        }
+    </script>
+</body>
+</html>
